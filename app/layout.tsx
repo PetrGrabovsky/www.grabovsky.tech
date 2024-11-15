@@ -2,6 +2,7 @@ import '@/shared/styles/globals.css';
 
 import clsx from 'clsx';
 
+import Layout from '@/layout/Layout';
 import { inter } from '@/shared/styles/fonts';
 import { ChildrenProps } from '@/shared/types/types';
 
@@ -11,11 +12,12 @@ const RootLayout = ({ children }: ChildrenProps) => {
       <body
         className={clsx(
           'flex min-h-screen flex-col overflow-x-hidden bg-body-background',
-          'text-gray-300 antialiased',
+          'text-base leading-relaxed tracking-wide text-gray-300 antialiased',
+          'text-justify font-normal shadow-sm',
           inter.className
         )}
       >
-        {children}
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
