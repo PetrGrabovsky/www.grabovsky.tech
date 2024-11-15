@@ -1,5 +1,7 @@
 'use client';
 
+import clsx from 'clsx';
+
 import { ChildrenProps } from '@/shared/types/types';
 
 import Footer from './components/Footer';
@@ -7,11 +9,12 @@ import Header from './components/Header';
 import useLayoutManager from './hooks/useLayoutManager';
 
 const Layout = ({ children }: ChildrenProps) => {
-  const { isMobileView } = useLayoutManager();
+  const { isMobileView, isShrunk, markerRef } = useLayoutManager();
 
   return (
     <>
-      <Header>
+      <span ref={markerRef} className='h-0 w-0' aria-hidden='true' />
+      <Header className={clsx({ 'h-10': isShrunk })}>
         <span>Logo</span>
         {isMobileView && <span>Menu</span>}
       </Header>

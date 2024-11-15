@@ -1,8 +1,14 @@
+import clsx from 'clsx';
+
 import { ChildrenProps } from '@/shared/types/types';
 
-const Header = ({ children }: ChildrenProps) => {
+interface HeaderProps extends ChildrenProps {
+  className?: string;
+}
+
+const Header = ({ children, className }: HeaderProps) => {
   return (
-    <header className='fixed inset-0 flex h-16 bg-gray-600'>
+    <header className={clsx('fixed inset-0 flex h-16 bg-gray-600', className)}>
       <div className='container flex items-center justify-between'>
         {children}
       </div>
