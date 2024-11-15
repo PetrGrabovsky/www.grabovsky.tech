@@ -8,7 +8,12 @@ interface HeaderProps extends ChildrenProps {
 
 const Header = ({ children, className }: HeaderProps) => {
   return (
-    <header className={clsx('fixed inset-0 flex h-16 bg-gray-600', className)}>
+    <header
+      className={clsx(
+        'transition-primary fixed inset-0 flex bg-gray-600',
+        className
+      )}
+    >
       <div className='container flex items-center justify-between'>
         {children}
       </div>

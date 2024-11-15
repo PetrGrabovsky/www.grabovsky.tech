@@ -31,14 +31,14 @@ const reducer = (state: State, action: Action): State => {
 interface LayoutManagerReturn {
   isMobileView: boolean;
   isShrunk: boolean;
-  markerRef: RefObject<HTMLDivElement>;
+  markerRef: RefObject<HTMLSpanElement>;
 }
 
 const useLayoutManager = (): LayoutManagerReturn => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { isMobileView, isShrunk } = state;
 
-  const markerRef = useRef<HTMLDivElement | null>(null);
+  const markerRef = useRef<HTMLSpanElement | null>(null);
 
   // Detekce mobilního zobrazení
   useEffect(() => {

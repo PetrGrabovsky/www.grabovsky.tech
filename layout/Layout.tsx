@@ -14,7 +14,7 @@ const Layout = ({ children }: ChildrenProps) => {
   return (
     <>
       <span ref={markerRef} className='h-0 w-0' aria-hidden='true' />
-      <Header className={clsx({ 'h-10': isShrunk })}>
+      <Header className={clsx(isShrunk ? 'h-10' : 'h-16')}>
         <span>Logo</span>
         {isMobileView && <span>Menu</span>}
       </Header>
